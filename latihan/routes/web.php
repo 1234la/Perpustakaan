@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/index', 'HomeController@dashboardAdmin')->middleware('onlyAdmin');
 Route::get('/user/index', 'HomeController@dashboardUser')->middleware('onlyOrdinaryUser');
 Route::get('/notfound/index', 'HomeController@notFoundPage')->name('notFound');
+
+Route::resource('/buku', 'BukuController');
