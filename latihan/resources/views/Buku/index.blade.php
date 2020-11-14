@@ -3,6 +3,9 @@
 
 <div class=row>
     <div class="col-md-10">
+        <div>
+            <a href="{{route('buku.create')}}" class="btn-sm btn-danger">Tambah Buku</a>
+        </div>
         <div class="card">
             <div class="card-header">
               Data Buku Perpustakaan

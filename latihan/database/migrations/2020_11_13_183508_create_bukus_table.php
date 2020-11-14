@@ -15,13 +15,13 @@ class CreateBukusTable extends Migration
     {
         Schema::create('bukus', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('judul');
-            $table->string('pengarang');
-            $table->string('penerbit');
-            $table->string('tahun');
-            $table->string('isbn');
-            $table->string('letak');
-            $table->integer('jumlah');
+            $table->string('judul', 50)->nullable();
+            $table->string('pengarang', 50)->nullable();
+            $table->string('penerbit',50)->nullable();
+            $table->string('tahun',10)->nullable();
+            $table->string('isbn',20)->nullable();
+            $table->enum('letak', ['rak1','rak2','rak3','rak4','rak5'])->nullable();
+            $table->integer('jumlah')->nullable();
             $table->timestamps();
         });
     }

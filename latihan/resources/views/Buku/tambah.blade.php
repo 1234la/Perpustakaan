@@ -3,13 +3,13 @@
 
 <div class=row>
     <div class="col-md-10">
-    <a href="{{route('buku.create')}}"></a>
         <div class="card">
             <div class="card-header">
               Input Data Buku
             </div>
             <div class="card-body">
-                <form action="" method="POST">
+            <form action="{{route('buku.store')}}" method="POST">
+                {{ csrf_field()}}
                     <div class="form-group">
                       <label for="judul">Judul</label>
                       <input type="text" class="form-control" id="judul" placeholder="Judul Buku">
@@ -32,7 +32,8 @@
                       </div>
                       <div class="form-group">
                         <label for="">Letak</label>
-                       <select name="letak" id="">
+                       <select name="letak" id="" class="form-control">
+                           <option value=>Pilih</option>
                            <option value="rak1">Rak 1</option>
                            <option value="rak2">Rak 2</option>
                            <option value="rak3">Rak 3</option>
