@@ -7,6 +7,9 @@
             <div class="card-header">
               Data Buku Perpustakaan
             </div>
+            <div>
+            <a href="{{route('buku.create')}}" class="btn-sm btn-danger">Tambah Buku</a>
+            </div>
             <div class="card-body">
                 <table class="table table-striped">
                     <tr>
@@ -33,12 +36,9 @@
                             <td>{{($book->letak)}}</td>
                             <td>{{($book->jumlah)}}</td>
                             <td>
-                            <div class="col" style="background-color:yellow">
-                                <a href="{{url('/edit')}" class="btn btn-xs btn-primary" style="margin:5px">Edit</a> 
-                            </div>
-                            <div class="col" style="background-color:green">
-                                <a href="#" class="btn btn-xs btn-danger" onclick="return confirm('yakin?');">Delete</a>
-                            </div>
+                                <a href="/buku/edit/{{$book->id}}" class="btn btn-xs btn-primary" style="margin:5px">Edit</a> 
+                               <!--hapus belum selesai-->
+                               <a href="/buku/hapus/{{$book->id}}" class="btn btn-xs btn-danger" onclick="return confirm('yakin?');">Delete</a>
                             </td>
                         </tr>
                     @endforeach

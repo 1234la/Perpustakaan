@@ -23,7 +23,8 @@ Route::get('/bukus','BukuController@index');
 Route::get('/create','BukuController@create');
 
 //edit buku 
-Route::get('/edit','BukuController@edit');
+Route::get('/buku/edit/{id}','BukuController@edit');
+Route::post('/buku/update','BukuController@update');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/index', 'HomeController@dashboardAdmin')->middleware('onlyAdmin');
