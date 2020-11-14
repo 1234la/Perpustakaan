@@ -62,6 +62,7 @@ class BukuController extends Controller
      */
 
 
+     
     public function edit($id) {
     // mengambil data books berdasarkan id yang dipilih
     $bukus = DB::table('bukus')->where('id',$id)->first();
