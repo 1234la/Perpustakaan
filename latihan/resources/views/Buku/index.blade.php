@@ -14,6 +14,7 @@
             <div class="card-body">
                 <table class="table table-striped">
                     <tr>
+                    <th>NO</th>
                     <th>Judul Buku</th>
                     <th>Pengarang</th> 
                     <th>Penerbit</th>
@@ -24,8 +25,10 @@
                     <th>Opsi</th>
                     </tr>
         
-                    @foreach ($bukus as $book)
+                    <?php $index=0?>
+                    @foreach ($bukus as $index =>$book)
                         <tr>
+                            <td>{{$index+1}} </td>
                             <td>{{($book->judul)}}</td>
                             <td>{{($book->pengarang)}}</td>
                             <td>{{($book->penerbit)}}</td>
