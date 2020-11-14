@@ -62,6 +62,7 @@ class BukuController extends Controller
             Alert::success(' Berhasil !', ' Data Berhasil Ditambahkan');
             return redirect()->route('buku.index');
         }
+        
         else{
             Alert::error(' Gagal !', ' Data Gagal Ditambahkan');
             return redirect()->route('buku.index');
