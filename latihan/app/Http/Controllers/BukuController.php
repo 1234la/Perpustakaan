@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Buku;
 use Illuminate\Support\Facades\DB;
+use App\Buku;
+use Validator;
+use Alert;
 
 class BukuController extends Controller
 {
@@ -42,8 +44,30 @@ class BukuController extends Controller
     public function store(Request $request)
     {
         // var_dump($_POST);
+        $validator = Validator::make($request->all(),[
+            'judul' => 'required',
+            'pengarang' => 'required',
+            'penerbit' => 'required',
+            'tahun' => 'required',
+            'isbn' => 'required',
+            'letak' => 'required',
+            'jumlah' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect('post/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
         $book = new Buku();
-        $book->create($request->all());
+        $cek = $book->create($request->all());
+        if($cek){
+            Alert::success(' Berhasil !', ' Data Berhasil Ditambahkan');
+            return redirect()->route('buku.index');
+        }
+        else{
+            Alert::error(' Gagal !', ' Data Gagal Ditambahkan');
+            return redirect()->route('buku.index');
+        }
     }
 
     /**
@@ -91,7 +115,14 @@ class BukuController extends Controller
     public function destroy($id)
     {
         $book = Buku::findOrfail($id);
-        $book->delete();
-        return redirect()->route('buku.index');
+        $cek = $book->delete();
+        if($cek){
+            Alert::success(' Berhasil !', ' Data Berhasil Dihapus');
+            return redirect()->route('buku.index');
+        }
+        else{
+            Alert::error(' Gagal !', ' Data Gagal Dihapus');
+            return redirect()->route('buku.index');
+        }
     }
 }
