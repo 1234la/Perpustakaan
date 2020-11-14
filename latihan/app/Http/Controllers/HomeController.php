@@ -31,7 +31,7 @@ class HomeController extends Controller
     {
         $bukus = DB::table('bukus') -> get();
         // mengirim data books ke view books
-        return view('admin.index', ['bukus' => $bukus]);
+        return view('buku.index', ['bukus' => $bukus]);
     }
 
     public function dashboardUser()

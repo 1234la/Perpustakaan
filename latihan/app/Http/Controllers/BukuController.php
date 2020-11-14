@@ -128,7 +128,7 @@ class BukuController extends Controller
         'jumlah' => $request->jumlah
     ]);
     // alihkan halaman edit ke halaman books
-    return redirect('/admin/index')->with('status', 'Data Buku Berhasil DiUbah');
+    return redirect('/buku/index')->with('status', 'Data Buku Berhasil DiUbah');
     }
 
 

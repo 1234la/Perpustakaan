@@ -17,6 +17,7 @@ class OnlyAdmin
     {
         if($request->user()->role != 'admin'){
             return redirect()->route('homepage');
+            // return redirect()->route('user.index');
         }
         return $next($request);
     }

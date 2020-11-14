@@ -26,10 +26,14 @@ Route::get('/create','BukuController@create');
 Route::get('/buku/edit/{id}','BukuController@edit');
 Route::post('/buku/update','BukuController@update');
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@dashboardAdmin')->middleware('onlyAdmin');
 Route::get('/admin/index', 'HomeController@dashboardAdmin')->middleware('onlyAdmin');
-Route::get('/user/index', 'HomeController@dashboardUser')->middleware('onlyOrdinaryUser');
+// Route::get('/user/index', 'HomeController@dashboardUser')->middleware('onlyOrdinaryUser');
+Route::get('/user/index', 'HomeController@dashboardUser')->name('homepage');
 Route::get('/notfound/index', 'HomeController@notFoundPage')->name('notFound');
 
+//tambah buku
 Route::resource('/buku', 'BukuController');
+//hapus buku
 Route::get('/buku/hapus/{id}','BukuController@destroy');
