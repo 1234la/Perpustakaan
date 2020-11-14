@@ -15,6 +15,9 @@ class BukuController extends Controller
      */
     public function index()
     {
+        // $datas = Buku::all();
+        // return view('buku.index', compact('datas'));
+        
         $bukus = DB::table('bukus') -> get();
         // mengirim data books ke view books
         return view('buku.index', ['bukus' => $bukus]);
@@ -27,7 +30,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-       return view('buku.tambah');
+        return view('buku.tambah');
     }
 
     /**
@@ -38,7 +41,9 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // var_dump($_POST);
+        $book = new Buku();
+        $book->create($request->all());
     }
 
     /**
@@ -58,7 +63,6 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
     public function edit($id)
     {
         //
