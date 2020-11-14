@@ -15,9 +15,6 @@ class BukuController extends Controller
      */
     public function index()
     {
-        // $datas = Buku::all();
-        // return view('buku.index', compact('datas'));
-        
         $bukus = DB::table('bukus') -> get();
         // mengirim data books ke view books
         return view('buku.index', ['bukus' => $bukus]);
@@ -64,6 +61,7 @@ class BukuController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
     public function edit($id) {
     // mengambil data books berdasarkan id yang dipilih
     $bukus = DB::table('bukus')->where('id',$id)->first();
@@ -81,6 +79,7 @@ class BukuController extends Controller
 
     public function update(Request $request) 
     {
+
     // untuk validasi form
     $this-> validate($request, [
         'judul' => 'required',
@@ -114,6 +113,8 @@ class BukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Buku::findOrfail($id);
+        $book->delete();
+        return redirect()->route('buku.index');
     }
 }
