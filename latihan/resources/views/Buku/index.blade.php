@@ -4,10 +4,14 @@
 <div class="container">
 <div class=row>
     <div class="col-md-10">
+<<<<<<< HEAD
         <div>
             <a href="{{route('buku.create')}}" class="btn-sm btn-danger">Tambah Buku</a>
         </div>
         <div class="card">
+=======
+        <div class="card" style="margin-left:50px">
+>>>>>>> main
             <div class="card-header">
               Data Buku Perpustakaan
             </div>
@@ -23,18 +27,18 @@
                     <th>Jumlah</th>
                     </tr>
         
-                    @foreach ($datas as $data)
+                    @foreach ($bukus as $book)
                         <tr>
-                            <td>{{($data->judul)}}</td>
-                            <td>{{($data->pengarang)}}</td>
-                            <td>{{($data->penerbit)}}</td>
-                            <td>{{($data->tahun)}}</td>
-                            <td>{{($data->isbn)}}</td>
-                            <td>{{($data->letak)}}</td>
-                            <td>{{($data->jumlah)}}</td>
+                            <td>{{($book->judul)}}</td>
+                            <td>{{($book->pengarang)}}</td>
+                            <td>{{($book->penerbit)}}</td>
+                            <td>{{($book->tahun)}}</td>
+                            <td>{{($book->isbn)}}</td>
+                            <td>{{($book->letak)}}</td>
+                            <td>{{($book->jumlah)}}</td>
                         </tr>
-                        </table>
                     @endforeach
+                </table>
                     
             </div>
           </div>

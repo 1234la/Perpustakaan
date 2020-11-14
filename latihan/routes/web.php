@@ -16,6 +16,7 @@ Route::get('/', function () {
 })->name('homepage');
 
 Auth::routes();
+Route::get('/bukus','BukuController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/index', 'HomeController@dashboardAdmin')->middleware('onlyAdmin');
