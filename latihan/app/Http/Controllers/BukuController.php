@@ -8,6 +8,7 @@ use App\Buku;
 use Validator;
 use Alert;
 
+
 class BukuController extends Controller
 {
     /**
