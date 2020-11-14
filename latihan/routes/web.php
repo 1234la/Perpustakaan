@@ -16,7 +16,14 @@ Route::get('/', function () {
 })->name('homepage');
 
 Auth::routes();
+//read semua buku tanpa edit dan delete
 Route::get('/bukus','BukuController@index');
+
+//tambah buku 
+Route::get('/create','BukuController@create');
+
+//edit buku 
+Route::get('/edit','BukuController@edit');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/index', 'HomeController@dashboardAdmin')->middleware('onlyAdmin');

@@ -27,7 +27,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        //
+       return view('buku.tambah');
     }
 
     /**
@@ -58,6 +58,7 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
         //

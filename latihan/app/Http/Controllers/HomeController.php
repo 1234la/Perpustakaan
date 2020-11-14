@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,9 @@ class HomeController extends Controller
 
     public function dashboardAdmin()
     {
-        return view('admin.index');
+        $bukus = DB::table('bukus') -> get();
+        // mengirim data books ke view books
+        return view('admin.index', ['bukus' => $bukus]);
     }
 
     public function dashboardUser()
