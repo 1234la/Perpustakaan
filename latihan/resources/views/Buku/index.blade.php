@@ -21,6 +21,7 @@
                     <th>ISBN</th>
                     <th>Letak</th>
                     <th>Jumlah</th>
+                    <th>Opsi</th>
                     </tr>
         
                     @foreach ($bukus as $book)
@@ -32,6 +33,11 @@
                             <td>{{($book->isbn)}}</td>
                             <td>{{($book->letak)}}</td>
                             <td>{{($book->jumlah)}}</td>
+                            <td> 
+                                <a href="/buku/hapus/{{ $book->id }}">
+                                    <button type="submit" class="btn-sm btn-danger">Hapus</button>
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                 </table>
@@ -41,3 +47,4 @@
 </div>
 </div>
 @endsection
+

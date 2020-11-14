@@ -17,7 +17,7 @@ class BukuController extends Controller
     {
         // $datas = Buku::all();
         // return view('buku.index', compact('datas'));
-        
+
         $bukus = DB::table('bukus') -> get();
         // mengirim data books ke view books
         return view('buku.index', ['bukus' => $bukus]);
@@ -65,7 +65,8 @@ class BukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        // $book = Buku::fingOrfail($id);
+        // return view('buku.edit',['bukus' => $book]);
     }
 
     /**
@@ -77,7 +78,8 @@ class BukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $book = Buku::findOrfail($id);
+        // $book->create($request->all());
     }
 
     /**
@@ -88,6 +90,8 @@ class BukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Buku::findOrfail($id);
+        $book->delete();
+        return redirect()->route('buku.index');
     }
 }

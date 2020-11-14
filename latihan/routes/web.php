@@ -24,3 +24,4 @@ Route::get('/user/index', 'HomeController@dashboardUser')->middleware('onlyOrdin
 Route::get('/notfound/index', 'HomeController@notFoundPage')->name('notFound');
 
 Route::resource('/buku', 'BukuController');
+Route::get('/buku/hapus/{id}','BukuController@destroy');
