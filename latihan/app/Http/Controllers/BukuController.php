@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Buku;
+use Illuminate\Support\Facades\DB;
 
 class BukuController extends Controller
 {
@@ -14,8 +15,9 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $datas = Buku::all();
-        return view('buku.index', compact('data'));
+        $bukus = DB::table('bukus') -> get();
+        // mengirim data books ke view books
+        return view('buku.index', ['bukus' => $bukus]);
     }
 
     /**
