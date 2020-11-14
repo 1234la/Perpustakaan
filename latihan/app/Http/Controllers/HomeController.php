@@ -35,8 +35,10 @@ class HomeController extends Controller
     }
 
     public function dashboardUser()
-    {
-        return view('user.index');
+    { 
+        $bukus = DB::table('bukus') -> get();
+        // mengirim data books ke view books
+        return view('user.index', ['bukus' => $bukus]);
     }
 
     public function notFoundPage()

@@ -1,13 +1,12 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container">
 <div class=row>
     <div class="col-md-10">
         <div>
-            <a href="{{route('buku.create')}}" class="btn-sm btn-danger">Tambah Buku</a>
+            <a href="{{route('buku.create')}}" class="btn-sm btn-danger" style="margin-left:160px;margin-right:-60px">Tambah Buku</a>
         </div>
-        <div class="card">
+        <div class="card" style="margin-left:160px;margin-right:-60px">
             <div class="card-header">
               Data Buku Perpustakaan
             </div>
@@ -22,7 +21,7 @@
                     <th>ISBN</th>
                     <th>Letak</th>
                     <th>Jumlah</th>
-                    <th>Opsi</th>
+                    <th>Aksi</th>
                     </tr>
         
                     <?php $index=0?>
@@ -36,18 +35,18 @@
                             <td>{{($book->isbn)}}</td>
                             <td>{{($book->letak)}}</td>
                             <td>{{($book->jumlah)}}</td>
-                            <td> 
-                                <a href="/buku/hapus/{{ $book->id }}">
-                                    <button type="submit" class="btn-sm btn-danger">Hapus</button>
-                                </a>
+                            <td>
+                                <a href="/buku/edit/{{$book->id}}" class="btn btn-xs btn-primary" style="margin:5px">Edit</a> 
+                               <!--hapus belum selesai-->
+                               <a href="/buku/hapus/{{$book->id}}" class="btn btn-xs btn-danger" onclick="return confirm('yakin?');">Delete</a>
                             </td>
                         </tr>
-                        @endforeach
+                    @endforeach
                 </table>
+                    
             </div>
           </div>
     </div>
 </div>
-</div>
-@endsection
 
+@endsection

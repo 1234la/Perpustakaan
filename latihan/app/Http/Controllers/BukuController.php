@@ -92,7 +92,7 @@ class BukuController extends Controller
     public function edit($id) {
     // mengambil data books berdasarkan id yang dipilih
     $bukus = DB::table('bukus')->where('id',$id)->first();
-    // passing data books yang didapat ke view edit.blade.php
+    // passing data books yang didapat ke view edit.blade.
     return view('buku.edit', compact('bukus'));
     }
 

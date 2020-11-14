@@ -74,7 +74,7 @@
                             @enderror        
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                         <!--cancel belum selesai-->
+                        / <!--cancel belum selesai-->
                         <a href="#" class="btn btn-xs btn-danger"
                             onclick="return confirm('yakin?','history.back(-1)');">Cancel</a>
                     </form>
