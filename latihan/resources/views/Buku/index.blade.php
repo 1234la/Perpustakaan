@@ -4,14 +4,10 @@
 <div class="container">
 <div class=row>
     <div class="col-md-10">
-<<<<<<< HEAD
         <div>
             <a href="{{route('buku.create')}}" class="btn-sm btn-danger">Tambah Buku</a>
         </div>
         <div class="card">
-=======
-        <div class="card" style="margin-left:50px">
->>>>>>> main
             <div class="card-header">
               Data Buku Perpustakaan
             </div>
@@ -37,9 +33,8 @@
                             <td>{{($book->letak)}}</td>
                             <td>{{($book->jumlah)}}</td>
                         </tr>
-                    @endforeach
+                        @endforeach
                 </table>
-                    
             </div>
           </div>
     </div>
