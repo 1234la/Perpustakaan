@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                       <label for="pengarang">Pengarang</label>
-                      <input type="text" name="pengarang" class="form-control" id="pengarang" placeholeder="Pengarang Buku">
+                      <input type="text" name="pengarang" class="form-control" id="pengarang" placeholder="Pengarang Buku">
                     </div>
                     <div class="form-group">
                         <label for="penerbit">Penerbit</label>
