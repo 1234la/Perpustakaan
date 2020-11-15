@@ -56,6 +56,8 @@
                         <input type="number" name="jumlah" class="form-control" id="jumlah" placeholder="Jumlah Buku">
                       </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="/home" class="btn btn-xs btn-danger"
+                            onclick="return confirm('yakin?');">Cancel</a>
                   </form>
             </div>
           </div>

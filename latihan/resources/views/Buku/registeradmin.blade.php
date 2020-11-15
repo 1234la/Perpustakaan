@@ -78,6 +78,8 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <a href="/home" class="btn btn-xs btn-danger"
+                            onclick="return confirm('yakin?');">Cancel</a>
                             </div>
                         </div>
                     </form>
