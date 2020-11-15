@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Alert;
 
 class HomeController extends Controller
 {
@@ -51,12 +52,26 @@ class HomeController extends Controller
         'role' => 'required',
     ]);
     // insert data ke table books
-    DB::table('users')->insert([
+    // DB::table('users')->insert([
+    //     'name' => $request->name,
+    //     'email' => $request->email,
+    //     'password' =>Hash::make($request->password),
+    //     'role' => $request->role,
+    $book = DB::table('users');
+    $cek = $book->insert([
         'name' => $request->name,
         'email' => $request->email,
         'password' =>Hash::make($request->password),
         'role' => $request->role,
     ]);
+        if($cek){
+            Alert::success(' Berhasil !', ' User Berhasil Ditambahkan');
+            return redirect()->route('buku.index');
+        }
+        else{
+            Alert::error(' Gagal !', ' User Gagal Ditambahkan');
+            return redirect()->route('buku.index');
+        }
     // alihkan halaman tambah buku ke halaman books
     return redirect('/home')-> with('status', 'Data User Berhasil Ditambahkan');
     }

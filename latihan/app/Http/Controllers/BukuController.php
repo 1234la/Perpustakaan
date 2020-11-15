@@ -106,7 +106,6 @@ class BukuController extends Controller
 
     public function update(Request $request) 
     {
-
     // untuk validasi form
     $this-> validate($request, [
         'judul' => 'required',
@@ -118,7 +117,8 @@ class BukuController extends Controller
         'jumlah' => 'required'
     ]);
     // update data books
-    DB::table('bukus')->where('id', $request->id)->update([
+   $book = DB::table('bukus');
+   $cek = $book->where('id', $request->id)->update([
         'judul' => $request->judul,
         'pengarang' => $request->pengarang,
         'penerbit' => $request->penerbit,
@@ -127,9 +127,18 @@ class BukuController extends Controller
         'letak' => $request->letak,
         'jumlah' => $request->jumlah
     ]);
+        if($cek){
+            Alert::success(' Berhasil !', ' Data Berhasil Diedit');
+            return redirect()->route('buku.index');
+        }
+        
+        else{
+            Alert::error(' Gagal !', ' Data Gagal Diedit');
+            return redirect()->route('buku.index');
+        }
     // alihkan halaman edit ke halaman books
     return redirect('/buku/index')->with('status', 'Data Buku Berhasil DiUbah');
-    }
+}
 
 
     /**
