@@ -2,9 +2,10 @@
 @section('content')
 
 <div class=row>
-    <div class="col-md-10">
-        <div>
-            <a href="{{route('buku.create')}}" class="btn-sm btn-danger" style="margin-left:160px;margin-right:-60px">Tambah Buku</a>
+    <div class="col-md-10 ">
+        <div class="tombol" style="margin-bottom:10px ;margin-left:160px;margin-right:-60px">
+             <a href="{{route('buku.create')}}" class="btn-sm btn-danger" ">Tambah Buku</a>
+              <a href="/registeradmin" class="btn-sm btn-primary" style="margin-left:5px;margin-right:-60px">Tambah Admin/User</a>
         </div>
         <div class="card" style="margin-left:160px;margin-right:-60px">
             <div class="card-header">

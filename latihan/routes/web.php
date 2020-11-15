@@ -37,3 +37,6 @@ Route::get('/notfound/index', 'HomeController@notFoundPage')->name('notFound');
 Route::resource('/buku', 'BukuController');
 //hapus buku
 Route::get('/buku/hapus/{id}','BukuController@destroy');
+
+//register admin
+Route::get('/registeradmin','HomeController@registerAdmin')->middleware('onlyAdmin');

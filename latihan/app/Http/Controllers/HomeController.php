@@ -33,6 +33,12 @@ class HomeController extends Controller
         // mengirim data books ke view books
         return view('buku.index', ['bukus' => $bukus]);
     }
+    
+    public function registerAdmin()
+    {
+        return view('buku.registeradmin');
+    }
+
 
     public function dashboardUser()
     { 
