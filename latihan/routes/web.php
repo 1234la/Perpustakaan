@@ -38,5 +38,6 @@ Route::resource('/buku', 'BukuController');
 //hapus buku
 Route::get('/buku/hapus/{id}','BukuController@destroy');
 
-//register admin
+//register admin bisa ini dipakai :)
 Route::get('/registeradmin','HomeController@registerAdmin')->middleware('onlyAdmin');
+Route::post('/storeregister','HomeController@storeRegister')->middleware('onlyAdmin');

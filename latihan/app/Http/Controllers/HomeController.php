@@ -39,6 +39,37 @@ class HomeController extends Controller
         return view('buku.registeradmin');
     }
 
+    public function storeRegister(Request $request) {
+
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+        'password' => 'required',
+        'role' => 'required',
+    ]);
+    // insert data ke table books
+    DB::table('users')->insert([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => $request->password,
+        'role' => $request->role,
+    ]);
+    // alihkan halaman tambah buku ke halaman books
+    return redirect('/home')-> with('status', 'Data User Berhasil Ditambahkan');
+    }
+    
+    
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        // var_dump($_POST);
+       
+    }
 
     public function dashboardUser()
     { 

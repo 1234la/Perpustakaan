@@ -4,8 +4,8 @@
 <div class=row>
     <div class="col-md-10 ">
         <div class="tombol" style="margin-bottom:10px ;margin-left:160px;margin-right:-60px">
-             <a href="{{route('buku.create')}}" class="btn-sm btn-danger" ">Tambah Buku</a>
-              <a href="/registeradmin" class="btn-sm btn-primary" style="margin-left:5px;margin-right:-60px">Tambah Admin/User</a>
+             <a href="{{route('buku.create')}}" class="btn-sm btn-danger" style="text-decoration:none" >Tambah Buku</a>
+              <a href="/registeradmin" class="btn-sm btn-primary" style="padding:5px; margin-left:5px;margin-right:-60px;text-decoration:none">Tambah Admin/User</a>
         </div>
         <div class="card" style="margin-left:160px;margin-right:-60px">
             <div class="card-header">

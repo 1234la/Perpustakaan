@@ -66,8 +66,8 @@
 
                             <div class="col-md-6">
                                 <select class="custom-select" name='role'>
-                                <!---<option selected>Pilih Opsi Role</option>
-                                    <option value="admin">Admin</option> -->
+                                <<option selected value="bukan_admin">Pilih Opsi Role</option>
+                                  <!--  <option value="admin">Admin</option> -->
                                     <option value="bukan_admin">Bukan Admin</option>
                                   </select>
                             </div>

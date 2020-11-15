@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="/storeregister">
                         @csrf
 
                         <div class="form-group row">
@@ -66,7 +66,7 @@
 
                             <div class="col-md-6">
                                 <select class="custom-select" name='role'>
-                                    <option selected>Pilih Opsi Role</option>
+                                    <option selected  value="bukan_admin">Pilih Opsi Role</option>
                                     <option value="admin">Admin</option>
                                     <option value="bukan_admin">Bukan Admin</option>
                                   </select>
