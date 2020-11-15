@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -51,7 +54,7 @@ class HomeController extends Controller
     DB::table('users')->insert([
         'name' => $request->name,
         'email' => $request->email,
-        'password' => $request->password,
+        'password' =>Hash::make($request->password),
         'role' => $request->role,
     ]);
     // alihkan halaman tambah buku ke halaman books
